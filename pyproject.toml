@@ -1,0 +1,35 @@
+[project]
+name = "fenomen2"
+version = "0.1.0"
+description = "Fenomen 2 — a modular, long-term AI platform."
+requires-python = ">=3.12"
+readme = "README.md"
+dependencies = [
+    "pydantic>=2.7,<3",
+    "pyyaml>=6.0,<7",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=8.0,<9",
+    "pytest-asyncio>=0.23,<1",
+    "ruff>=0.5,<1",
+]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+include = ["backend*"]
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
+testpaths = ["backend/tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

@@ -1,0 +1,10 @@
+# Fenomen 2 — default configuration
+#
+# One top-level section per subsystem: `kernel:` for the kernel itself,
+# and (starting Phase 1) one section per registered module, named after
+# that module's `metadata.name`.
+
+kernel:
+  log_level: INFO
+  log_format: console
+  shutdown_timeout_seconds: 10.0
